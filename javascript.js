@@ -133,6 +133,17 @@ let j = 100 / "Apple";                 //NaN                         However, if
 console.log(j);
 
 //you can use the global JavaScript function //? isNaN() to find out if a value is a not a number:
-let u = 100 / "Apple";    // true
-isNaN(x);
+let u = 100 / "Apple";                 // true
+console.log(isNaN(u));
 
+//if you use NaN in a mathematical operation, the result will also be NaN:
+let c = NaN;
+let i = 5;
+let z = c + i;                          //NaN
+console.log(z);
+
+//Or the result might be a concatenation like NaN5:
+let r = NaN;
+let t = "5";
+let l = r + t;
+console.log(l);                       //NaN5
