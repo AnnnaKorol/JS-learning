@@ -37,7 +37,7 @@ console.log(percentage);
 let x = 1;
 x=-x;
 console.log(x); 
-alert(x);
+console.log(x);
 
 // binary operands:
 let f = 1, g = 3;
@@ -147,3 +147,52 @@ let r = NaN;
 let t = "5";
 let l = r + t;
 console.log(l);                       //NaN5
+
+const string = "The revolution will not be televised.";
+console.log(string);
+
+
+//Strings:                        - single quotes ('), double quotes ("), or backticks (`) to wrap your strings.which you use is down to personal preference 
+const single = 'Single quotes';
+const double = "Double quotes";
+const backtick = `Backtick`;
+
+console.log(single);
+console.log(double);
+console.log(backtick);
+
+//Inside a template literal, you can wrap JavaScript variables or expressions inside ${ }, and the result will be included in the string:
+const nameHis = "Chris";
+const greeting = `Hello, ${nameHis}`;
+console.log(greeting);                          // "Hello, Chris"
+
+//...to join together two variables:
+const one = "Hello, ";
+const two = "how are you?";
+const joined = `${one}${two}`;
+console.log(joined); 
+
+
+//You can use ${} only with template literals, not normal strings
+const greetingUs = "Hello";
+const nameFrom = "Chris";
+console.log(greeting + ", " + nameFrom);   
+
+//TODO--------------------------------------------------------------------
+
+//Example of the button interaction
+const button = document.querySelector("button");
+
+function greet() {
+    const name = prompt("What is your name?");
+    const greeting = document.querySelector("#greeting");
+    greeting.textContent = `Hello ${name}, nice to see you!`;
+}
+
+button.addEventListener("click", greet);
+//Here, we are using the window.prompt() function, which prompts the user to answer a question via a popup dialog box and then stores the text they enter inside a given variable — in this case name. We then display a string that inserts the name into a generic greeting message.
+
+//TODO--------------------------------------------------------------------          
+
+    
+} 
