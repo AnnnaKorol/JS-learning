@@ -33,4 +33,106 @@ const percentage = actual/ max;
 console.log(percentage);
 
 
+// unary operand:
+let x = 1;
+x=-x;
+console.log(x); 
+alert(x);
+
+// binary operands:
+let f = 1, g = 3;
+console.log(g-f);
+
+console.log(6-'2'); //4, converts '2' to a number
+console.log('1' + 2 + 2); // "122" and not "14" - The binary + is the only operator that supports strings in such a way.
+
+//convert non-numbers  -  the operand is not a number, the unary plus converts it into a number.
+//It actually does the same thing as Number(...), but is shorter.
+console.log( +true); // 1
+console.log(+""); //0
+
+//convert string to numbers using the plus: 
+let apples = "2";
+let oranges = "3";
+console.log( +apples + +oranges);//5
+console.log( apples + oranges ); // "23", the binary plus concatenates strings
+
+
+//chaining assignments:
+let k,o,p;
+k=o=p=2+2;
+console.log( k ); // 4
+console.log( o ); // 4
+console.log( p ); // 4
+
+
+
+//modify-in-place:
+let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+console.log( n ); // 14
+
+let m = 2;
+m *= 3 + 5; // right part evaluated first, same as n *= 8
+console.log( m ); // 16
+
+
+//increment/decrement
+//increment ++ increase value by 1:
+let counter = 2;
+counter++;
+console.log(counter);//3
+
+//decrement -- decrease value by 1:
+let calculation = 2;
+calculation--;        // works the same as counter = counter - 1, but is shorter
+console.log(calculation); // 1
+//!Increment/decrement can only be applied to variables. Trying to use it on a value like 5++ will give an error.
+
+//If we’d like to increase a value and immediately use the result of the operator, we need the prefix form:
+let count = 0;
+console.log( ++count ); // 1
+
+let countAmount = 1;
+console.log( 2 * ++countAmount ); // 4
+
+//If we’d like to increment a value but use its previous value, we need the postfix form:
+let counterValue = 0;
+console.log( counterValue++ ); // 0
+
+
+
+//Answers of the exercise:
+console.log("" + 1 + 0);              //"10"
+console.log("" - 1 + 0);              //-1
+console.log(true + false);           //1
+console.log(6/"3");                  //2
+console.log("2" * "3");              //6
+console.log(4 + 5 + "px");           // "9px"
+console.log("$" + 4 + 5);           //"$45"
+console.log("4" - 2);               // 2
+console.log("4px" -2);              //NaN
+console.log("-9" + 5);              //"-95"
+console.log("-9" - 5);               //-14
+console.log(null + 1);               //1
+console.log(undefined + 1);           //NaN
+console.log(" \t \n" - 2);            //-2
+//null becomes 0 after the numeric conversion.
+//undefined becomes NaN after the numeric conversion.
+// - always converts to numbers
+
+//Extra large or extra small numbers can be written with scientific (exponent) notation:
+let q = 123e5;  //12300000
+let w = 123e-5; //0.00123 
+console.log(q, w)
+
+
+//Trying to do arithmetic with a non-numeric string will result in //? NaN (Not a Number):            
+let j = 100 / "Apple";                 //NaN                         However, if the string is numeric, the result will be a number:let x = 100 / "10"; will be 10
+console.log(j);
+
+//you can use the global JavaScript function //? isNaN() to find out if a value is a not a number:
+let u = 100 / "Apple";    // true
+isNaN(x);
 
