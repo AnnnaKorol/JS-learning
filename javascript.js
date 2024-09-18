@@ -268,7 +268,8 @@ let details = "Achtung!"
 let result2 = details.repeat(4);
 console.log(result2);
 
-//*replace()  - 1)oes not change the string it is called on.; 2)returns a new string; 3)replaces only the first match.
+//*replace()  - 1)does not change the string it is called on.; 2)returns a new string; 3)replaces only the first match.
+
 
 //*replaceAll():
 const paragraph = "I think Ruth's dog is cuter than your dog!";
@@ -279,3 +280,6 @@ console.log(paragraph.replaceAll('dog', 'monkey'));
 // text.split(",")    // Split on commas
 // text.split(" ")    // Split on spaces
 // text.split("|")  // Split on pipe 
+
+
+//TODO--------------------------------------------------------------------   
