@@ -283,3 +283,52 @@ console.log(paragraph.replaceAll('dog', 'monkey'));
 
 
 //TODO--------------------------------------------------------------------   
+
+//!Comparisons - return a boolean value;
+let result1 = 5 > 4; // assign the result of the comparison
+console.log( result1 ); // true
+
+console.log( null == undefined ); // true
+console.log( null === undefined ); // false
+//null/undefined are converted to numbers: null becomes 0, while undefined becomes NaN.
+
+//*null:
+//Comparisons convert null to a number, treating it as 0. That’s why (3) null >= 0 is true and (1) null > 0 is false.
+console.log(null > 0 );  // (1) false
+console.log(null == 0 ); // (2) false
+console.log(null >= 0 ); // (3) true
+//On the other hand, the equality check == for undefined and null is defined such that, without any conversions, they equal each other and don’t equal anything else. That’s why (2) null == 0 is false.
+
+
+//*undefined:
+console.log(undefined > 0 ); // false (1)
+console.log(undefined < 0 ); // false (2)
+console.log(undefined == 0 ); // false (3)
+//Comparisons (1) and (2) return false because undefined gets converted to NaN and NaN is a special numeric value which returns false for all comparisons. The equality check (3) returns false because undefined only equals null, undefined, and no other value.
+
+
+
+
+//TODO--------------------------------------------------------------------   
+
+//!Conditional Statements
+
+let hour = new Date().getHours(); // This gets the current hour (0-23)
+
+if (hour < 18) {
+    console.log("Good Day");
+} else {
+    console.log("Good Evening");
+}
+
+
+// switch(expression) {
+//     case x:
+//         // code block
+//         break;
+//       case y:
+//         // code block
+//         break;
+//       default:
+//         // code block
+//     } 
