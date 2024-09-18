@@ -176,7 +176,8 @@ console.log(joined);
 //You can use ${} only with template literals, not normal strings
 const greetingUs = "Hello";
 const nameFrom = "Chris";
-console.log(greeting + ", " + nameFrom);   
+console.log(greetingUs + ", " + nameFrom);  
+console.log(`${greetingUs}, ${nameFrom}`); // "Hello, Chris"
 
 //TODO--------------------------------------------------------------------
 
