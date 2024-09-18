@@ -163,8 +163,8 @@ console.log(backtick);
 
 //Inside a template literal, you can wrap JavaScript variables or expressions inside ${ }, and the result will be included in the string:
 const nameHis = "Chris";
-const greeting = `Hello, ${nameHis}`;
-console.log(greeting);                          // "Hello, Chris"
+const greetings = `Hello, ${nameHis}`;
+console.log(greetings);                          // "Hello, Chris"
 
 //...to join together two variables:
 const one = "Hello, ";
@@ -177,7 +177,7 @@ console.log(joined);
 const greetingUs = "Hello";
 const nameFrom = "Chris";
 console.log(greetingUs + ", " + nameFrom);  
-console.log(`${greetingUs}, ${nameFrom}`); // "Hello, Chris"
+// this also work and better for reading --> console.log(`${greetingUs}, ${nameFrom}`); // "Hello, Chris"
 
 //TODO--------------------------------------------------------------------
 
@@ -191,9 +191,91 @@ function greet() {
 }
 
 button.addEventListener("click", greet);
+
 //Here, we are using the window.prompt() function, which prompts the user to answer a question via a popup dialog box and then stores the text they enter inside a given variable — in this case name. We then display a string that inserts the name into a generic greeting message.
 
 //TODO--------------------------------------------------------------------          
 
+//Including expressions in strings:
+//You can include JavaScript expressions in template literals, as well as just variables, and the results will be included in the result:
+
+const song = "Fight the Youth";
+const score = 9;
+const highestScore = 10;
+const output = `I like this song ${song}. I gave it a score of ${(score/highestScore) *100}%`;
+console.log(output);
+
+
+const advert = "Happy/Pappy"
+const mark = 4;
+const heighestMark = 10;
+const result = `I like this advertising ${advert}. I gave it a mark of ${(mark/heighestMark) *100}%`;
+console.log(result);
     
-} 
+
+//TODO--------------------------------------------------------------------        
+
+//!String methods:
+
+//*slice() extracts a part of a string and returns the extracted part in a new string. takes 2 parameters: start position, and end position (end not included).
+let parag = "Apple, Banana, Kiwi";
+let part = parag.slice(7, 13);
+console.log(part);
+//If you omit the second parameter, the method will slice out the rest of the string: let text = "Apple, Banana, Kiwi"; let part = text.slice(7);
+//If a parameter is negative, the position is counted from the end of the string: let text = "Apple, Banana, Kiwi"; let part = text.slice(-12);
+//This example slices out a portion of a string from position -12 to position -6: let text = "Apple, Banana, Kiwi"; let part = text.slice(-12, -6);
+
+
+//*toUpperCase()
+let content = "Hello World!";
+let content2 = content.toUpperCase();
+console.log(content2);
+
+
+//*toLowerCase()
+let info = "Tuta";
+let info2 = info.toLowerCase();
+console.log(info2);
+
+//*concat() -  joins two or more strings:
+let message = "Love";
+let message2 = " saves the World!";
+let message3 = message.concat("",  message2);
+console.log(message3);
+
+//*trim()  -  method removes whitespace from both sides of a string:
+let mail = "            Hello Mam"
+let mail2 = mail.trim();
+console.log(mail2);
+
+//*trimEnd() and trimStart() works almost the same but delete text in the beginning or at the end;
+
+//*padStart() or //padEnd() :
+let textBig = "5";
+let padded = textBig.padStart(4,"x");
+console.log(padded);                      //xxx5
+
+//!The padStart() or //padEnd() methods are a string method. To pad a number, convert the number to a string first:
+let num = 5;
+let textOrigin = num.toString();
+let paddedText = textOrigin.padStart(4, "0");
+console.log(paddedText);
+
+
+
+//*repeat()   1)a string with a number of copies of a string; 2)returns a new string; 3)does not change the original string.:
+let details = "Achtung!"
+let result2 = details.repeat(4);
+console.log(result2);
+
+//*replace()  - 1)oes not change the string it is called on.; 2)returns a new string; 3)replaces only the first match.
+
+//*replaceAll():
+const paragraph = "I think Ruth's dog is cuter than your dog!";
+console.log(paragraph.replaceAll('dog', 'monkey'));
+// Expected output: "I think Ruth's monkey is cuter than your monkey!"
+
+//*split()
+// text.split(",")    // Split on commas
+// text.split(" ")    // Split on spaces
+// text.split("|")  // Split on pipe 
