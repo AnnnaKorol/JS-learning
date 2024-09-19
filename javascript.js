@@ -510,6 +510,11 @@ const myNumber = Math.random();
 // the random() function generates a random number between
 // 0 and up to but not including 1, and returns that number
 
+//4)map():
+const originals = [1, 2, 3];
+const doubled = originals.map(item => item * 2);
+console.log(doubled); // [2, 4, 6]
+
 
 
 
@@ -581,11 +586,6 @@ if ( checkAge(ages) ) {
 
 
 
-  //*map():
-  const originals = [1, 2, 3];
-const doubled = originals.map(item => item * 2);
-console.log(doubled); // [2, 4, 6]
-
 
 
 //!-----------------------------------------------------------------------------------------------------
@@ -626,7 +626,6 @@ function min(a, b) {
     }
   }
 
-
 //2-st varial (fanction declaraction)
 function checkNumber (number1, number2) {
     return (number1 > number2) ? number1 : number2;
@@ -637,4 +636,50 @@ function checkNumber (number1, number2) {
     return (number1 > number2) || number2}
 //!-----------------------------------------------------------------------------------------------------
 
+//*Function Declaration: a function, declared as a separate statement, in the main code flow:
+function sum(a, b) {
+    return a + b;
+  }
 
+//TODO-------------
+
+  //*Function Expression: a function, created inside an expression or inside another syntax construct. Here, the function is created on the right side of the “assignment expression” =:
+  let summ = function(a, b) {
+    return a + b;
+  };
+
+//TODO-------------
+
+//*Arrow function:
+let sume = (a, b) => a + b;
+/* This arrow function is a shorter form of:
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+console.log(sume(1, 2) ); // 3
+
+//If we have only one argument, then parentheses around parameters can be omitted:
+let doublev = n => n * 2;
+// roughly the same as: let double = function(n) { return n * 2 }
+console.log(doublev(3) ); // 6
+
+//If there are no arguments, parentheses are empty, but they must be present:
+let sayHi = () => console.log("Hello!");
+sayHi();
+
+//Arrow functions can be used in the same way as Function Expressions.
+let agea = prompt("What is your age?", 18);
+
+let welcomes = (agea < 18) ? 
+() => console.log('Hello!') :
+() => console.log("Greetings!");
+welcomes();
+
+//Sometimes we need a more complex function, with multiple expressions and statements. In that case, we can enclose them in curly braces. The major difference is that curly braces require a return within them to return a value (just like a regular function does).
+let sumj = (a, b) => {  // the curly brace opens a multiline function
+    let resultt = a + b;
+    return resultt; // if we use curly braces, then we need an explicit "return"
+  };
+  
+  console.log( sumj(1, 2) ); // 3
