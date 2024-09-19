@@ -191,10 +191,10 @@ button.addEventListener("click", greet);
 const song = "Fight the Youth";
 const score = 9;
 const highestScore = 10;
-const output = `I like this song ${song}. I gave it a score of ${
+const outputs = `I like this song ${song}. I gave it a score of ${
   (score / highestScore) * 100
 }%`;
-console.log(output);
+console.log(outputs);
 
 const advert = "Happy/Pappy";
 const mark = 4;
@@ -475,7 +475,6 @@ console.log(!!value); // true
 
 
 
-
 const firstNamem = "Hanna";
 const lastNamem = "Korol";
 const thisYearm = 2024;
@@ -490,5 +489,152 @@ const greetingm = `Hello! My name is ${fullNamem} and I am ${agem} years old.`;
 // 3. Print greeting with console.log
 
 console.log(greetingm);
+
+
+//TODO--------------------------------------------------------------------
+
+//*Functions
+
+//1)replace():
+const myText = "I am a string";
+const newString = myText.replace("string", "sausage");
+console.log(newString);
+
+//2)join() :
+const myArray = ["I", "love", "chocolate", "frogs"];
+const madeAString = myArray.join(" ");
+console.log(madeAString);
+
+//3)random()
+const myNumber = Math.random();
+// the random() function generates a random number between
+// 0 and up to but not including 1, and returns that number
+
+
+
+
+//function expression-is an anonymous function, because it has no name. You'll often see anonymous functions when a function expects to receive another function as a parameter. 
+(function () {
+    console.log("hello");
+  });
+
+
+  let textBox = document.querySelector("#textBox");
+let output = document.querySelector("#output");
+
+  //or 
+  textBox.addEventListener("keydown", function (event) {
+    console.log(`You pressed "${event.key}".`);
+  });
+
+
+  //or arrow function (callback):
+  textBox.addEventListener("keydown", (event) => {
+    console.log(`You pressed "${event.key}".`);
+  });
+
+  //If the function only takes one parameter, you can omit the parentheses around the parameter:
+  textBox.addEventListener("keydown", event => {
+    console.log(`You pressed "${event.key}".`);
+  });
+
+
+//
+
+textBox.addEventListener("keydown", (event) => {
+  output.textContent = `You pressed "${event.key}".`;
+});
+
+
+//
+function showMessage(from, text) { // parameters: from, text
+    console.log(from + ': ' + text);
+  }
+  
+  showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+  showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+
+
+
+//Modern JavaScript engines support the nullish coalescing operator ??, it’s better when most falsy values, such as 0, should be considered “normal”:
+
+function showCount(count) {
+  // if count is undefined or null, show "unknown"
+  console.log(count ?? "unknown");
+}
+
+showCount(0); // 0
+showCount(null); // unknown
+showCount(); // unknown
+
+
+
+//
+ let ages = prompt('How old are you?', 18);
+
+if ( checkAge(ages) ) {
+    console.log( 'Access granted' );
+  } else {
+    console.log( 'Access denied' );
+  }
+
+
+
+
+  //*map():
+  const originals = [1, 2, 3];
+const doubled = originals.map(item => item * 2);
+console.log(doubled); // [2, 4, 6]
+
+
+
+//!-----------------------------------------------------------------------------------------------------
+//!TASK 1 in 3 different ways to describe :
+
+//1-st varial (fanction declaraction)
+function checkAge(age) {
+    if (age > 18) {
+      return true;
+    } else {
+      return confirm('Did parents allow you?');
+    }
+  }
+
+  //2-nd variant (ternarny operator ?)
+  function checkAge (age) {
+  return (age > 18) ? true : confirm ('Did parents allow you?');
+  }
+  
+  //3-rd variant (||)
+  function checkAge (age) {
+  return (age = 18) || confirm ('Did parents allow you?');
+  }
+
+//!-----------------------------------------------------------------------------------------------------
+//!TASK 2 in 3 different ways to describe :
+
+min(2, 5) == 2
+min(3, -1) == -1
+min(1, 1) == 1
+
+//1-st varial (fanction declaraction)
+function min(a, b) {
+    if (a < b) {
+      return a;
+    } else {
+      return b;
+    }
+  }
+
+
+//2-st varial (fanction declaraction)
+function checkNumber (number1, number2) {
+    return (number1 > number2) ? number1 : number2;
+    }
+    
+  //3-rd variant (||)   
+    function checkNumber (number1, number2) {
+    return (number1 > number2) || number2}
+//!-----------------------------------------------------------------------------------------------------
 
 
