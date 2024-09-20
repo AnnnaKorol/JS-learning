@@ -683,3 +683,85 @@ let sumj = (a, b) => {  // the curly brace opens a multiline function
   };
   
   console.log( sumj(1, 2) ); // 3
+
+
+
+
+
+
+  //A recursive function is a function that calls itself until it doesn’t. This technique is called recursion.
+
+  function summm(n) {
+    if (n <= 1) {
+      return n;
+    }
+    return n + summm(n - 1);
+  }
+console.log(summm(3));  //6
+
+
+
+  //-------------------------
+  //a named function expression as follows:
+  let countDownn = function f(fromNumber) {
+    console.log(fromNumber);
+
+    let nextNumber = fromNumber - 1;
+
+    if (nextNumber > 0) {
+        f(nextNumber);
+    }
+}
+
+let newYearCountDownn = countDownn;
+countDownn = null;
+newYearCountDownn(10);
+
+
+//--------------------------------------
+//Task : Suppose that you need to develop a function that counts down from a specified number to 1. For example, to count down from 3 to 1:
+function countDownf(fromNumberf) {
+  console.log(fromNumberf);
+
+  let nextNumberf = fromNumberf - 1;
+
+  if (nextNumberf > 0) {
+      countDownf(nextNumberf);
+  }
+}
+countDownf(3);
+
+
+
+//TODO  ODION PROJECT PAGE (Function Basics tasks)
+
+//ODION PROJECT (task 1)
+function add7 (num) {
+  return num + 7;
+}
+console.log(add7(1));
+
+
+
+//ODION PROJECT (task 2)
+function multiply(a, b) {
+  return a * b;
+}
+console.log(multiply(5, 5));
+
+
+//ODION PROJECT (task 3)
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+console.log(capitalize("my mom loves cats"));     
+console.log(capitalize("MY MOM LOVES CATS"));     
+console.log(capitalize("mY mOm LOVeS CaTS")); 
+//The charAt() method returns the character at a specified index (position) in a string. string.charAt(index)
+
+
+//ODION PROJECT (task 4)
+function lastLetter(strin) {
+  return strin.charAt(strin.length -1);
+}
+console.log(lastLetter("abcd"));
